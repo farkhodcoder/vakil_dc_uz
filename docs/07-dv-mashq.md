@@ -160,8 +160,8 @@ Kirish sahifasi Google yoqilganini o'zi aniqlaydi (qayta build kerak emas).
 
 ### 8.3 Hosting: GitHub Pages (hozir) va keyin
 
-- `.github/workflows/deploy-pages.yml`: `main`'ga har push → testlar → `pnpm --dir apps/web build` → `apps/web/out` → Pages.
-- Bir martalik: repo → **Settings → Pages → Source: GitHub Actions**.
+- `.github/workflows/deploy-pages.yml`: `main`'ga har push → testlar → `pnpm --dir apps/web build` → `apps/web/out` → `gh-pages` branch.
+- Pages yoqilmasa: repo → **Settings → Pages → Source: Deploy from a branch → `gh-pages` / (root)**.
 - Manzil: `https://farkhodcoder.github.io/vakil_dc_uz/`
 - **Diqqat:** GitHub Pages qoidalari onlayn biznes / e-commerce sayt yuritishni taqiqlaydi — vaqtinchalik sinov uchun. Haqiqiy ishga tushirishda `apps/web/out` ni istalgan statik hostingga (O'zbekistondagi server — ma'lumot lokalizatsiyasi uchun ham qulay) joylang; `NEXT_PUBLIC_BASE_PATH` bo'sh, Supabase URL Configuration'ga yangi domen.
 

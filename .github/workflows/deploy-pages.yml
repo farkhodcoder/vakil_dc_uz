@@ -1,5 +1,6 @@
-# main'ga har push → statik sayt (apps/web/out) → GitHub Pages: https://<owner>.github.io/<repo>/
-# Bir martalik sozlama: repo → Settings → Pages → Source: "GitHub Actions".
+# main'ga har push → statik sayt (apps/web/out) → gh-pages branch → https://<owner>.github.io/<repo>/
+# gh-pages branch paydo bo'lganda GitHub Pages odatda o'zi yoqiladi. Yoqilmasa:
+# repo → Settings → Pages → Source: "Deploy from a branch" → gh-pages / (root).
 name: Deploy to GitHub Pages
 
 on:
@@ -8,9 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
@@ -50,18 +49,10 @@ jobs:
       - name: Build (statik eksport)
         run: pnpm --dir apps/web build
 
-      - uses: actions/configure-pages@v5
-
-      - uses: actions/upload-pages-artifact@v3
+      # .nojekyll ham qo'yiladi — aks holda Jekyll "_next" papkasini tashlab yuboradi
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          path: apps/web/out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: apps/web/out
+          publish_branch: gh-pages
+          force_orphan: true
