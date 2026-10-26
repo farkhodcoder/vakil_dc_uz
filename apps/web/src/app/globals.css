@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+/* vakil brend tokenlari (logotipdan). Kontrast qog'oz fonda (#F7F5F0):
+   brand 10.1:1 · ink 14.8:1 · muted 5.5:1 · ok-ink 4.9:1 · warn (warn-50 ustida) 5.8:1 — WCAG AA */
+@theme {
+  --color-paper: #f7f5f0;
+  --color-surface: #ffffff;
+  --color-line: #e4e0d6;
+  --color-line-strong: #cfc9bb;
+
+  --color-ink: #16233a;
+  --color-muted: #5b6476;
+
+  --color-brand: #1b3b6f;
+  --color-brand-hover: #152f59;
+  --color-brand-50: #edf1f7;
+  --color-brand-100: #dbe3ef;
+
+  /* "Tasdiq yashil": belgi va to'ldirish uchun; matn uchun — ok-ink */
+  --color-ok: #23b26d;
+  --color-ok-ink: #0f7a45;
+  --color-ok-50: #e8f6ee;
+
+  --color-bad: #b42318;
+  --color-bad-50: #fdf0ee;
+
+  --color-warn: #8a5300;
+  --color-warn-50: #fdf4e3;
+
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* Ўзбекча (кирилл): Manrope'da Қ, Ғ, Ҳ yo'q — butun sahifa bir xil shriftda bo'lsin */
+html:lang(uz-Cyrl) body {
+  font-family: var(--font-noto), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Xatoga o'tilganda maydon qisqa yorituladi */
+@keyframes field-flash {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  30% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-bad) 25%, transparent);
+  }
+}
+.field-flash {
+  animation: field-flash 1.2s ease-out 1;
+  border-radius: 1rem;
+}
+@media (prefers-reduced-motion: reduce) {
+  .field-flash {
+    animation: none;
+  }
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

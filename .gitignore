@@ -1,0 +1,35 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# builds
+.next/
+out/
+dist/
+.turbo/
+*.tsbuildinfo
+next-env.d.ts
+
+# generated (apps/web/scripts/setup-assets.mjs yaratadi)
+apps/web/public/mediapipe/
+apps/web/public/fonts/
+
+# env — hech qachon commit qilinmaydi
+.env
+.env.*
+!.env.example
+
+# logs / os
+*.log
+.DS_Store
+Thumbs.db
+
+# editors
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# test
+coverage/
+playwright-report/
+test-results/

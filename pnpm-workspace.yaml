@@ -1,0 +1,8 @@
+packages:
+  - apps/*
+  - packages/*
+
+# pnpm faqat shu paketlarga o'rnatish skriptlarini ishlatishga ruxsat beradi
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
