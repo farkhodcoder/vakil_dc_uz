@@ -12,6 +12,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
+    "pretest": "node scripts/setup-assets.mjs",
     "test": "vitest run"
   },
   "dependencies": {
