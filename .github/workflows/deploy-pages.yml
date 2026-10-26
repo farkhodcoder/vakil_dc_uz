@@ -30,11 +30,11 @@ jobs:
       NEXT_PUBLIC_CLICK_SERVICE_ID: ${{ vars.CLICK_SERVICE_ID }}
       NEXT_PUBLIC_CLICK_MERCHANT_ID: ${{ vars.CLICK_MERCHANT_ID }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - uses: pnpm/action-setup@v4
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 24
           cache: pnpm

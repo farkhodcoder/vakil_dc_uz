@@ -4,6 +4,7 @@ import { PDFDocument } from "pdf-lib";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 import type { StoredPhoto } from "@/features/dv-photo/stored-photo";
 import { DICTIONARIES } from "@/i18n/dictionaries";
+import { BASE_PATH } from "@/lib/base-path";
 import { LANGS } from "@/i18n/locales";
 import { buildPracticePdf } from "./pdf";
 import { emptyPerson } from "./schema";
@@ -93,8 +94,11 @@ function fixture(): PracticeData {
 const publicDir = path.resolve(__dirname, "../../../public");
 
 beforeAll(() => {
-  // Brauzerdagi fetch("/fonts/...") o'rniga — public/ dan o'qiymiz (scripts/setup-assets.mjs ko'chiradi)
-  vi.stubGlobal("fetch", async (url: string) => new Response(readFileSync(path.join(publicDir, url))));
+  // Brauzerdagi fetch("<basePath>/fonts/...") o'rniga — public/ dan o'qiymiz (scripts/setup-assets.mjs ko'chiradi)
+  vi.stubGlobal("fetch", async (url: string) => {
+    const rel = BASE_PATH && url.startsWith(BASE_PATH) ? url.slice(BASE_PATH.length) : url;
+    return new Response(readFileSync(path.join(publicDir, rel)));
+  });
 });
 afterAll(() => vi.unstubAllGlobals());
 
