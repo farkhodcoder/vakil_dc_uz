@@ -3,6 +3,7 @@ import { Manrope, Noto_Sans } from "next/font/google";
 import { SiteFooter, SiteHeader } from "@/components/site-chrome";
 import { getDictionary } from "@/i18n/get-dictionary";
 import { HTML_LANG, LANGS } from "@/i18n/locales";
+import { contentSecurityPolicy } from "@/lib/csp";
 import "../globals.css";
 
 // Lotin oldindan yuklanadi; kirill va lotin-kengaytma glif'lari unicode-range orqali kerak bo'lganda
@@ -43,6 +44,11 @@ export default async function RootLayout({ children }: LayoutProps<"/[lang]">) {
   const { lang, t } = await getDictionary();
   return (
     <html lang={HTML_LANG[lang]} className={`${manrope.variable} ${noto.variable}`}>
+      <head>
+        {/* Statik hostingda sarlavha qo'yib bo'lmaydi — CSP meta orqali */}
+        <meta httpEquiv="Content-Security-Policy" content={contentSecurityPolicy()} />
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
+      </head>
       <body className="flex min-h-dvh flex-col font-sans antialiased">
         <SiteHeader lang={lang} t={t} />
         <main className="flex-1">{children}</main>

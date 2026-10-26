@@ -119,7 +119,6 @@ export const en: Dictionary = {
     error: "Sign-in failed. Please try again.",
     agree: "By continuing, you accept the public offer and the privacy policy.",
     privacyNote: "We only receive your email and profile name from Google. Passport, photo and form data are never stored.",
-    devLogin: "Local test sign-in (development only)",
   },
   pay: {
     title: "Start practicing",
@@ -136,8 +135,6 @@ export const en: Dictionary = {
     offerAgree: "By paying, you accept the terms of the public offer.",
     notConfigured: "Payments are not connected yet. They will be available soon.",
     failed: "Could not start the payment. Please try again.",
-    devButton: "Test payment (local only)",
-    devNote: "Development mode: Click requests are simulated with the same signature.",
     lastResult: "The result of your last practice is still kept in this browser.",
     lastResultButton: "Open result",
     resultTitle: "Payment status",

@@ -67,7 +67,7 @@ export default async function HomePage() {
           <p className="max-w-xl text-lg leading-relaxed text-ink/75">{h.lead}</p>
           <div className="flex flex-wrap items-center gap-3">
             <Link
-              href={`/${lang}/mashq`}
+              href={`/${lang}/mashq/`}
               className="inline-flex min-h-14 items-center gap-2 rounded-full bg-brand px-7 text-lg font-extrabold text-white shadow-sm hover:bg-brand-hover"
             >
               {h.cta}
@@ -133,7 +133,7 @@ export default async function HomePage() {
           <p className="text-white/80">{h.perPractice}</p>
           <p className="rounded-2xl bg-white/10 p-4 text-sm leading-relaxed">{h.oncePerPayment}</p>
           <Link
-            href={`/${lang}/mashq`}
+            href={`/${lang}/mashq/`}
             className="mt-2 inline-flex min-h-14 w-fit items-center gap-2 rounded-full bg-white px-7 text-lg font-extrabold text-brand hover:bg-brand-50"
           >
             {h.cta}

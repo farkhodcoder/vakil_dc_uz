@@ -1,40 +1,26 @@
 import type { NextConfig } from "next";
 
-const isDev = process.env.NODE_ENV === "development";
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
-
-// Nonce'siz CSP: sahifalar statik (Cache Components) qoladi.
-// 'wasm-unsafe-eval' — brauzerdagi MediaPipe (foto tekshiruvi) uchun.
-// form-action: to'lov tugmasi my.click.uz ga yo'naltiradi.
-// TODO(production): SRI yoki nonce bilan 'unsafe-inline' ni olib tashlashni sinash.
-const csp = [
-  "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'${isDev ? " 'unsafe-eval'" : ""}`,
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' blob: data:",
-  "font-src 'self'",
-  `connect-src 'self' ${supabaseUrl}${isDev ? " ws: wss:" : ""}`.trim(),
-  "worker-src 'self' blob:",
-  "object-src 'none'",
-  "base-uri 'self'",
-  "form-action 'self' https://my.click.uz",
-  "frame-ancestors 'none'",
-  ...(isDev ? [] : ["upgrade-insecure-requests"]),
-].join("; ");
-
-const securityHeaders = [
-  { key: "Content-Security-Policy", value: csp },
-  { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  // Kamera faqat o'z saytimizda — foto bosqichida suratga olish uchun
-  { key: "Permissions-Policy", value: "camera=(self), microphone=(), geolocation=(), payment=()" },
-  ...(isDev ? [] : [{ key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains" }]),
-];
+/**
+ * To'liq statik sayt (output: "export"): istalgan statik hostingda ishlaydi — GitHub Pages ham.
+ * Server qismi yo'q: kirish va to'lov brauzerdan Supabase'ga, Click webhook — Supabase Edge Function
+ * (supabase/functions/click). Xavfsizlik sarlavhalari statik hostingda qo'yilmaydi —
+ * CSP <meta> orqali (src/lib/csp.ts), production hostingda sarlavha sifatida ham qo'shish tavsiya etiladi.
+ *
+ * NEXT_PUBLIC_BASE_PATH — sayt pastki yo'lda bo'lsa (GitHub Pages: "/<repo>"), domen ildizida — bo'sh.
+ */
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  trailingSlash: true,
+  basePath,
+  images: { unoptimized: true },
+  // Cache Components (PPR) statik eksport bilan mos emas — hamma sahifa build paytida to'liq tayyorlanadi
   transpilePackages: ["@vakil/db", "@vakil/dv-photo"],
+  experimental: {
+    // Til tashqarisidagi noma'lum yo'llar uchun brendlangan 404 (export'da 404.html bo'ladi)
+    globalNotFound: true,
+  },
   turbopack: {
     rules: {
       "*.css": {
@@ -42,12 +28,6 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
-  },
-  async headers() {
-    return [{ source: "/:path*", headers: securityHeaders }];
-  },
-  async rewrites() {
-    return [{ source: "/favicon.ico", destination: "/icon.svg" }];
   },
 };
 

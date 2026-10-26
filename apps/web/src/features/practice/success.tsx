@@ -117,7 +117,7 @@ export function SuccessView({ data, lang, t }: { data: PracticeData; lang: Lang;
       </p>
 
       <Link
-        href={`/${lang}/mashq`}
+        href={`/${lang}/mashq/`}
         className="inline-flex min-h-12 w-fit items-center rounded-full border border-line-strong px-6 font-bold text-brand hover:border-brand hover:bg-brand-50"
       >
         {s.again}

@@ -1,12 +1,14 @@
 "use client";
 
-import { useActionState, useMemo, useState, useSyncExternalStore } from "react";
+import { useMemo, useState, useSyncExternalStore } from "react";
 import { CheckIcon, LockIcon } from "@/components/icons";
 import { SuccessView } from "@/features/practice/success";
 import { lastCompletedPractice, type PracticeData } from "@/features/practice/state";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 import { formatSum, type Lang } from "@/i18n/locales";
-import { simulateClickPayment, startClickPayment, type PayState } from "./actions";
+import { BASE_PATH } from "@/lib/base-path";
+import { getBrowserClient } from "@/lib/supabase/browser";
+import { buildClickPayUrl, getClickConfig } from "./click";
 
 const noopSubscribe = () => () => undefined;
 
@@ -23,25 +25,33 @@ function useLastCompleted(): PracticeData | null {
   return useMemo(() => (raw ? (JSON.parse(raw) as PracticeData) : null), [raw]);
 }
 
-const initial: PayState = { error: null };
+type PayError = "not_configured" | "failed" | null;
 
-export function Paywall({
-  lang,
-  t,
-  priceTiyin,
-  devPayment,
-}: {
-  lang: Lang;
-  t: Dictionary;
-  priceTiyin: number;
-  devPayment: boolean;
-}) {
-  const [state, payAction, paying] = useActionState(startClickPayment.bind(null, lang), initial);
-  const [devState, devAction, devPaying] = useActionState(simulateClickPayment.bind(null, lang), initial);
+/** To'lov yozuvi (RLS: faqat o'z hisobiga) → my.click.uz. Click qaytgach /tolov/natija/ holatni kuzatadi. */
+async function startClickPayment(lang: Lang): Promise<PayError> {
+  const config = getClickConfig();
+  if (!config) return "not_configured";
+  const { data, error } = await getBrowserClient().rpc("create_practice_payment");
+  const row = data as { id?: string; amount_tiyin?: number } | null;
+  if (error || !row?.id || typeof row.amount_tiyin !== "number") return "failed";
+  window.location.assign(
+    buildClickPayUrl({
+      serviceId: config.serviceId,
+      merchantId: config.merchantId,
+      amountTiyin: row.amount_tiyin,
+      transactionParam: row.id,
+      returnUrl: `${window.location.origin}${BASE_PATH}/${lang}/tolov/natija/?id=${row.id}`,
+    }),
+  );
+  return null;
+}
+
+export function Paywall({ lang, t, priceTiyin }: { lang: Lang; t: Dictionary; priceTiyin: number }) {
+  const [paying, setPaying] = useState(false);
+  const [error, setError] = useState<PayError>(null);
   const last = useLastCompleted();
   const [showLast, setShowLast] = useState(false);
   const p = t.pay;
-  const error = state.error ?? devState.error;
 
   if (showLast && last) return <SuccessView data={last} lang={lang} t={t} />;
 
@@ -81,35 +91,30 @@ export function Paywall({
           ))}
         </ul>
 
-        <form action={payAction} className="mt-6">
-          <button
-            type="submit"
-            disabled={paying || devPaying}
-            className="inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-brand px-6 text-lg font-extrabold text-white hover:bg-brand-hover disabled:opacity-60"
-          >
-            {paying && <span className="size-5 animate-spin rounded-full border-2 border-white/40 border-t-white" />}
-            {paying ? p.redirecting : p.button}
-          </button>
-        </form>
+        <button
+          type="button"
+          disabled={paying}
+          onClick={async () => {
+            setPaying(true);
+            setError(null);
+            const result = await startClickPayment(lang);
+            // Muvaffaqiyatda sahifa Click'ga o'tadi; xato bo'lsa — shu yerda qolamiz
+            if (result) {
+              setError(result);
+              setPaying(false);
+            }
+          }}
+          className="mt-6 inline-flex min-h-14 w-full items-center justify-center gap-2 rounded-full bg-brand px-6 text-lg font-extrabold text-white hover:bg-brand-hover disabled:opacity-60"
+        >
+          {paying && <span className="size-5 animate-spin rounded-full border-2 border-white/40 border-t-white" />}
+          {paying ? p.redirecting : p.button}
+        </button>
         <p className="mt-3 text-center text-xs text-muted">{p.offerAgree}</p>
 
         {error && (
           <p role="alert" className="mt-4 rounded-xl border border-warn/25 bg-warn-50 px-4 py-3 text-sm font-semibold text-warn">
             {error === "not_configured" ? p.notConfigured : p.failed}
           </p>
-        )}
-
-        {devPayment && (
-          <form action={devAction} className="mt-5 border-t border-dashed border-line-strong pt-4">
-            <button
-              type="submit"
-              disabled={paying || devPaying}
-              className="inline-flex min-h-11 w-full items-center justify-center rounded-full border border-dashed border-warn px-4 text-sm font-semibold text-warn hover:bg-warn-50 disabled:opacity-60"
-            >
-              {p.devButton}
-            </button>
-            <p className="mt-2 text-xs text-muted">{p.devNote}</p>
-          </form>
         )}
       </div>
 

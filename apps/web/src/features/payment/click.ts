@@ -3,61 +3,13 @@
  *
  *  1. Foydalanuvchi my.click.uz/services/pay ga yo'naltiriladi (transaction_param = bizning payments.id).
  *  2. Click serveri Prepare (action=0) va Complete (action=1) so'rovlarini yuboradi:
- *     POST, application/x-www-form-urlencoded → /api/click/prepare, /api/click/complete.
+ *     POST, application/x-www-form-urlencoded → Supabase Edge Function supabase/functions/click
+ *     (…/functions/v1/click/prepare, …/click/complete).
  *  3. Imzo tekshiruvi va holat o'zgarishi bazada: public.click_prepare / public.click_complete
- *     (SECRET_KEY Supabase Vault'da — veb-serverga kerak emas).
+ *     (SECRET_KEY Supabase Vault'da — saytga kerak emas).
  */
 
 export const CLICK_PAY_URL = "https://my.click.uz/services/pay/";
-
-export const CLICK_FIELDS = [
-  "click_trans_id",
-  "service_id",
-  "click_paydoc_id",
-  "merchant_trans_id",
-  "merchant_prepare_id",
-  "amount",
-  "action",
-  "error",
-  "error_note",
-  "sign_time",
-  "sign_string",
-] as const;
-export type ClickField = (typeof CLICK_FIELDS)[number];
-export type ClickForm = Partial<Record<ClickField, string>>;
-
-export interface ClickResponse {
-  error: number;
-  error_note: string;
-  click_trans_id?: number;
-  merchant_trans_id?: string;
-  merchant_prepare_id?: number;
-  merchant_confirm_id?: number;
-}
-
-/** Bazaga yetib bormagan holatda (tarmoq, Supabase) — Click qayta urinadi */
-export const CLICK_INTERNAL_ERROR: ClickResponse = { error: -8, error_note: "Error in request from click" };
-
-const MAX_FIELD_LENGTH = 256;
-
-/** Faqat protokol maydonlari, faqat matn, uzunligi cheklangan */
-export function pickClickFields(entries: Iterable<[string, unknown]>): ClickForm {
-  const out: ClickForm = {};
-  for (const [key, value] of entries) {
-    if (typeof value !== "string" || value.length > MAX_FIELD_LENGTH) continue;
-    if ((CLICK_FIELDS as readonly string[]).includes(key)) out[key as ClickField] = value;
-  }
-  return out;
-}
-
-export function isClickResponse(v: unknown): v is ClickResponse {
-  return (
-    typeof v === "object" &&
-    v !== null &&
-    typeof (v as ClickResponse).error === "number" &&
-    typeof (v as ClickResponse).error_note === "string"
-  );
-}
 
 /** 999900 tiyin → "9999.00" (hujjatdagi format: N.NN) */
 export function formatClickAmount(tiyin: number): string {
@@ -88,10 +40,16 @@ export interface ClickConfig {
   merchantId: string;
 }
 
-/** Click kalitlari kiritilmagan bo'lsa — null (to'lov tugmasi "hali ulanmagan" deydi) */
-export function getClickConfig(env: Record<string, string | undefined> = process.env): ClickConfig | null {
-  const serviceId = env.CLICK_SERVICE_ID?.trim();
-  const merchantId = env.CLICK_MERCHANT_ID?.trim();
+/** Click ID'lari (maxfiy emas) build paytida beriladi; bo'sh bo'lsa — to'lov tugmasi "hali ulanmagan" deydi */
+export function getClickConfig(
+  env: { serviceId?: string; merchantId?: string } = {
+    // Next faqat to'g'ridan-to'g'ri yozilgan process.env.NEXT_PUBLIC_* ni brauzer kodiga qo'yadi
+    serviceId: process.env.NEXT_PUBLIC_CLICK_SERVICE_ID,
+    merchantId: process.env.NEXT_PUBLIC_CLICK_MERCHANT_ID,
+  },
+): ClickConfig | null {
+  const serviceId = env.serviceId?.trim();
+  const merchantId = env.merchantId?.trim();
   if (!serviceId || !merchantId || !/^\d+$/.test(serviceId) || !/^\d+$/.test(merchantId)) return null;
   return { serviceId, merchantId };
 }

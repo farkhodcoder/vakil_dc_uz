@@ -118,7 +118,6 @@ export const uz: Dictionary = {
     error: "Kirish amalga oshmadi. Qaytadan urinib ko‘ring.",
     agree: "Davom etib, siz ommaviy oferta va maxfiylik siyosatiga rozilik bildirasiz.",
     privacyNote: "Google hisobingizdan faqat email manzil va profil nomi olinadi. Pasport, foto va anketa saqlanmaydi.",
-    devLogin: "Lokal sinov kirishi (faqat development)",
   },
   pay: {
     title: "Mashqni boshlash",
@@ -135,8 +134,6 @@ export const uz: Dictionary = {
     offerAgree: "To‘lov qilish orqali ommaviy oferta shartlariga rozilik bildirasiz.",
     notConfigured: "To‘lov tizimi hali ulanmagan. Tez orada ishga tushadi.",
     failed: "To‘lovni boshlab bo‘lmadi. Qaytadan urinib ko‘ring.",
-    devButton: "Sinov to‘lovi (faqat lokal)",
-    devNote: "Development rejimi: Click so‘rovlari xuddi shu imzo bilan taqlid qilinadi.",
     lastResult: "Oxirgi mashqingiz natijasi shu brauzerda hali saqlanib turibdi.",
     lastResultButton: "Natijani ochish",
     resultTitle: "To‘lov holati",

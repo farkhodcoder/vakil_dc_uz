@@ -1,5 +1,7 @@
 # vakil — Green Card (DV) mashq sayti
 
+**Sayt (sinov):** https://farkhodcoder.github.io/vakil_dc_uz/ — `main`ga har push avtomatik joylashtiriladi (GitHub Actions → Pages).
+
 > **Muhim:** mustaqil o‘quv xizmati. AQSh hukumati bilan bog‘liq emas. Rasmiy DV arizasi faqat [dvprogram.state.gov](https://dvprogram.state.gov) saytida topshiriladi.
 
 Foydalanuvchi DV-2027 elektron arizasini rasmiy formadagi maydonlar va tartibda **mashq qiladi**:
@@ -17,10 +19,11 @@ Tillar: o‘zbek (lotin), ўзбек (кирилл), русский, English, T�
 
 | Papka | Nima |
 |---|---|
-| `apps/web` | Next.js 16 ilova (App Router, Cache Components, Tailwind v4) |
+| `apps/web` | Next.js 16 ilova — to'liq statik eksport (`apps/web/out`), Tailwind v4 |
 | `packages/dv-photo` | Foto qoidalari, o‘lchovlar, avto-kesish (sof TS, testlar bilan) |
 | `packages/db` | Supabase TypeScript turlari |
 | `supabase/migrations` | Postgres sxemasi (amaldagi: `0015`, `0016`) |
+| `supabase/functions/click` | Click SHOP API webhook (Prepare/Complete) — Edge Function |
 | `supabase/tests` | DB smoke test (Click Prepare/Complete, RLS, "1 to‘lov = 1 mashq") |
 | `docs/07-dv-mashq.md` | **Asosiy hujjat:** arxitektura, to‘lov oqimi, ishga tushirish qadamlari |
 
@@ -31,12 +34,12 @@ Talablar: Node ≥ 24, pnpm 12.
 ```bash
 pnpm install
 cp apps/web/.env.example apps/web/.env.local   # Supabase URL va publishable key'ni kiriting
-pnpm dev                                       # http://localhost:3000
+pnpm dev                                       # http://localhost:3000/uz/
 ```
 
 `predev` / `prebuild` MediaPipe modellarini (SHA-256 bilan) yuklaydi va PDF shriftlarini `public/` ga ko‘chiradi.
 
-Development'da `/{til}/sinov` sahifasi mashq interfeysini kirish va to‘lovsiz ko‘rsatadi (production'da 404).
+`pnpm --dir apps/web build` → `apps/web/out` (istalgan statik hostingga). Development'da `/{til}/sinov/` sahifasi mashq interfeysini kirish va to‘lovsiz ko‘rsatadi (production'da 404).
 
 ## Testlar
 

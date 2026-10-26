@@ -118,7 +118,6 @@ export const tr: Dictionary = {
     error: "Giriş yapılamadı. Lütfen tekrar deneyin.",
     agree: "Devam ederek kamuya açık teklifi ve gizlilik politikasını kabul etmiş olursunuz.",
     privacyNote: "Google’dan yalnızca e-posta adresinizi ve profil adınızı alırız. Pasaport, fotoğraf ve form verileri saklanmaz.",
-    devLogin: "Yerel test girişi (yalnızca development)",
   },
   pay: {
     title: "Alıştırmaya başla",
@@ -135,8 +134,6 @@ export const tr: Dictionary = {
     offerAgree: "Ödeme yaparak kamuya açık teklifin şartlarını kabul etmiş olursunuz.",
     notConfigured: "Ödeme sistemi henüz bağlanmadı. Yakında kullanılabilir olacak.",
     failed: "Ödeme başlatılamadı. Lütfen tekrar deneyin.",
-    devButton: "Test ödemesi (yalnızca yerel)",
-    devNote: "Development modu: Click istekleri aynı imzayla taklit edilir.",
     lastResult: "Son alıştırmanızın sonucu hâlâ bu tarayıcıda duruyor.",
     lastResultButton: "Sonucu aç",
     resultTitle: "Ödeme durumu",

@@ -1,7 +1,8 @@
 import { DEFAULT_LANG, isLang, type Lang } from "@/i18n/locales";
+import { BASE_PATH } from "./base-path";
 
 /**
- * Kirishdan keyingi yo'naltirish manzili: faqat shu saytdagi nisbiy yo'l.
+ * Kirishdan keyingi yo'naltirish manzili: faqat shu saytdagi nisbiy yo'l (basePath'siz).
  * "//evil.com", "https://..." va "/\\evil" kabi ochiq yo'naltirishlar rad etiladi.
  */
 export function safeNextPath(next: string | null | undefined, fallback: string): string {
@@ -23,10 +24,13 @@ export function langFromPath(path: string | null | undefined): Lang {
 /** Google'dan qaytgandan keyin: so'ralgan sahifa yoki mashq sahifasi */
 export function afterLoginPath(nextRaw: string | null | undefined): string {
   const lang = langFromPath(nextRaw);
-  return safeNextPath(nextRaw, `/${lang}/mashq`);
+  return safeNextPath(nextRaw, `/${lang}/mashq/`);
 }
 
-/** Brauzerdan OAuth uchun qaytish manzili */
-export function callbackUrl(origin: string, next: string): string {
-  return `${origin}/auth/callback?next=${encodeURIComponent(next)}`;
+/**
+ * Google (OAuth) qaytish manzili — statik sahifa /{til}/kirish/qaytish/.
+ * Supabase → Authentication → URL Configuration → Redirect URLs ro'yxatida bo'lishi kerak.
+ */
+export function callbackUrl(origin: string, next: string, basePath = BASE_PATH): string {
+  return `${origin}${basePath}/${langFromPath(next)}/kirish/qaytish/?next=${encodeURIComponent(next)}`;
 }

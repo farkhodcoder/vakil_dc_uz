@@ -2,6 +2,7 @@
 import fontkit from "@pdf-lib/fontkit";
 import { PDFDocument, degrees, rgb, type PDFFont, type PDFImage, type PDFPage } from "pdf-lib";
 import { photoState } from "@/features/dv-photo/stored-photo";
+import { asset } from "@/lib/base-path";
 import { format } from "@/i18n/format";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 import type { Lang } from "@/i18n/locales";
@@ -149,7 +150,7 @@ export async function buildPracticePdf(data: PracticeData, lang: Lang, t: Dictio
   doc.setTitle("DV Entry — Practice Draft (vakil)");
   doc.setProducer("vakil");
   doc.setCreator("vakil");
-  const [regBytes, boldBytes] = await Promise.all([loadFont("/fonts/NotoSans-Regular.ttf"), loadFont("/fonts/NotoSans-Bold.ttf")]);
+  const [regBytes, boldBytes] = await Promise.all([loadFont(asset("/fonts/NotoSans-Regular.ttf")), loadFont(asset("/fonts/NotoSans-Bold.ttf"))]);
   const regular = await doc.embedFont(regBytes, { subset: true });
   const bold = await doc.embedFont(boldBytes, { subset: true });
 

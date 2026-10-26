@@ -7,8 +7,6 @@ export default defineConfig({
   resolve: {
     alias: [
       { find: /^@\//, replacement: `${src}/` },
-      // "server-only" faqat Next bundlerida ma'noli; testlarda bo'sh modul
-      { find: /^server-only$/, replacement: `${src}/test/server-only-stub.ts` },
     ],
   },
   test: {

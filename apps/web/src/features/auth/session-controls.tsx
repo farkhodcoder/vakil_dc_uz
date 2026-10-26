@@ -20,7 +20,7 @@ export function AuthLink({ lang, labels }: { lang: Lang; labels: { login: string
   if (signedIn === null) return <span className="inline-block min-h-11 w-20" aria-hidden="true" />;
   return (
     <Link
-      href={signedIn ? `/${lang}/kabinet` : `/${lang}/kirish`}
+      href={signedIn ? `/${lang}/kabinet/` : `/${lang}/kirish/`}
       className="inline-flex min-h-11 items-center rounded-full bg-brand px-4 text-sm font-bold text-white transition-colors hover:bg-brand-hover"
     >
       {signedIn ? labels.cabinet : labels.login}
@@ -35,7 +35,7 @@ export function LogoutButton({ lang, label }: { lang: Lang; label: string }) {
       type="button"
       onClick={async () => {
         await getBrowserClient().auth.signOut();
-        router.replace(`/${lang}`);
+        router.replace(`/${lang}/`);
         router.refresh();
       }}
       className="inline-flex min-h-11 items-center rounded-full border border-line-strong px-5 font-semibold text-brand hover:border-brand"

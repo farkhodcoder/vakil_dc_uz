@@ -8,6 +8,7 @@ import {
   headTopFromMask,
   type PhotoFacts,
 } from "@vakil/dv-photo";
+import { asset } from "@/lib/base-path";
 
 /** Katta telefon fotolarini tahlil uchun kichraytiramiz — foizlar o'zgarmaydi */
 const MAX_ANALYSIS_SIDE = 1024;
@@ -24,7 +25,7 @@ let filesetPromise: Promise<Fileset> | null = null;
 function loadFileset(): Promise<Fileset> {
   if (!filesetPromise) {
     filesetPromise = import("@mediapipe/tasks-vision")
-      .then(({ FilesetResolver }) => FilesetResolver.forVisionTasks("/mediapipe/wasm"))
+      .then(({ FilesetResolver }) => FilesetResolver.forVisionTasks(asset("/mediapipe/wasm")))
       .catch((err: unknown) => {
         filesetPromise = null;
         throw err;
@@ -42,12 +43,12 @@ export function loadEngine(): Promise<Engine> {
       const fileset = await loadFileset();
       const [face, segmenter] = await Promise.all([
         FaceLandmarker.createFromOptions(fileset, {
-          baseOptions: { modelAssetPath: "/mediapipe/face_landmarker.task", delegate: "CPU" },
+          baseOptions: { modelAssetPath: asset("/mediapipe/face_landmarker.task"), delegate: "CPU" },
           runningMode: "IMAGE",
           numFaces: 3, // bittadan ko'p yuzni ham aniqlash uchun
         }),
         ImageSegmenter.createFromOptions(fileset, {
-          baseOptions: { modelAssetPath: "/mediapipe/selfie_segmenter.tflite", delegate: "CPU" },
+          baseOptions: { modelAssetPath: asset("/mediapipe/selfie_segmenter.tflite"), delegate: "CPU" },
           runningMode: "IMAGE",
           outputConfidenceMasks: true,
           outputCategoryMask: false,
@@ -71,7 +72,7 @@ export function loadVideoLandmarker(): Promise<FaceLandmarker> {
       const { FaceLandmarker } = await import("@mediapipe/tasks-vision");
       const fileset = await loadFileset();
       return FaceLandmarker.createFromOptions(fileset, {
-        baseOptions: { modelAssetPath: "/mediapipe/face_landmarker.task", delegate: "CPU" },
+        baseOptions: { modelAssetPath: asset("/mediapipe/face_landmarker.task"), delegate: "CPU" },
         runningMode: "VIDEO",
         numFaces: 2,
       });

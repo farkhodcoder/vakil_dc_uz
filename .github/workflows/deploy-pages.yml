@@ -1,0 +1,67 @@
+# main'ga har push → statik sayt (apps/web/out) → GitHub Pages: https://<owner>.github.io/<repo>/
+# Bir martalik sozlama: repo → Settings → Pages → Source: "GitHub Actions".
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      # Sayt /<repo>/ pastki yo'lida joylashadi
+      NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+      # Ochiq qiymatlar (har bir brauzerga baribir boradi; himoya — RLS)
+      NEXT_PUBLIC_SUPABASE_URL: https://zovvohvvsqzovvmewwyx.supabase.co
+      NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: sb_publishable_ZqEuQ1_-Mx2uzakJOcxLEA_VUA6bOVP
+      # Click ID'lari (maxfiy emas): repo → Settings → Secrets and variables → Actions → Variables.
+      # Bo'sh bo'lsa saytda "To'lov tizimi hali ulanmagan" chiqadi.
+      NEXT_PUBLIC_CLICK_SERVICE_ID: ${{ vars.CLICK_SERVICE_ID }}
+      NEXT_PUBLIC_CLICK_MERCHANT_ID: ${{ vars.CLICK_MERCHANT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Testlar
+        run: |
+          pnpm --dir packages/dv-photo test
+          pnpm --dir apps/web test
+
+      # prebuild: MediaPipe modellari (SHA-256) va shriftlar; postbuild: segment fayllari
+      - name: Build (statik eksport)
+        run: pnpm --dir apps/web build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: apps/web/out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

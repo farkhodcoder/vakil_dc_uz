@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useRequiredUser } from "@/features/auth/use-session";
 import { CheckIcon, CrossIcon } from "@/components/icons";
 import type { Dictionary } from "@/i18n/dictionaries/types";
 import type { Lang } from "@/i18n/locales";
@@ -9,6 +11,7 @@ import { getBrowserClient } from "@/lib/supabase/browser";
 
 type View = "pending" | "paid" | "cancelled" | "slow" | "notFound";
 
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const POLL_MS = 2000;
 const MAX_POLLS = 45; // ~1,5 daqiqa
 
@@ -57,7 +60,7 @@ export function PaymentStatus({ paymentId, lang, t }: { paymentId: string | null
               <CheckIcon className="size-8" />
             </span>
             <p className="text-lg font-bold text-ok-ink">{t.paid}</p>
-            <Link href={`/${lang}/mashq`} className={`${button} bg-brand text-white hover:bg-brand-hover`}>
+            <Link href={`/${lang}/mashq/`} className={`${button} bg-brand text-white hover:bg-brand-hover`}>
               {t.start}
             </Link>
           </>
@@ -68,7 +71,7 @@ export function PaymentStatus({ paymentId, lang, t }: { paymentId: string | null
               <CrossIcon className="size-8" />
             </span>
             <p className="font-semibold text-bad">{t.cancelled}</p>
-            <Link href={`/${lang}/mashq`} className={`${button} bg-brand text-white hover:bg-brand-hover`}>
+            <Link href={`/${lang}/mashq/`} className={`${button} bg-brand text-white hover:bg-brand-hover`}>
               {t.retry}
             </Link>
           </>
@@ -76,7 +79,7 @@ export function PaymentStatus({ paymentId, lang, t }: { paymentId: string | null
         {(view === "slow" || view === "notFound") && (
           <>
             <p className="font-semibold">{view === "slow" ? t.slow : t.notFound}</p>
-            <Link href={`/${lang}/kabinet`} className={`${button} border border-line-strong text-brand hover:border-brand`}>
+            <Link href={`/${lang}/kabinet/`} className={`${button} border border-line-strong text-brand hover:border-brand`}>
               {t.toCabinet}
             </Link>
           </>
@@ -84,4 +87,14 @@ export function PaymentStatus({ paymentId, lang, t }: { paymentId: string | null
       </div>
     </div>
   );
+}
+
+/** Click qaytaradigan sahifa (return_url): ?id=<payments.id>. Kirish talab qilinadi (RLS). */
+export function PaymentStatusFromUrl({ lang, t }: { lang: Lang; t: Dictionary["pay"] }) {
+  const params = useSearchParams();
+  const raw = params.get("id");
+  const id = raw && UUID.test(raw) ? raw : null;
+  const user = useRequiredUser(lang, `/${lang}/tolov/natija/${id ? `?id=${id}` : ""}`);
+  if (!user) return <div className="min-h-[60vh]" />;
+  return <PaymentStatus paymentId={id} lang={lang} t={t} />;
 }

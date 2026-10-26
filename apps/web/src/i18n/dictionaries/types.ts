@@ -67,7 +67,6 @@ export interface Dictionary {
     error: string;
     agree: string;
     privacyNote: string;
-    devLogin: string;
   };
   pay: {
     title: string;
@@ -80,8 +79,6 @@ export interface Dictionary {
     offerAgree: string;
     notConfigured: string;
     failed: string;
-    devButton: string;
-    devNote: string;
     lastResult: string;
     lastResultButton: string;
     resultTitle: string;

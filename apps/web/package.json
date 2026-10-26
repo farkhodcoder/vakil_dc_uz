@@ -8,6 +8,7 @@
     "dev": "next dev",
     "prebuild": "node scripts/setup-assets.mjs",
     "build": "next build",
+    "postbuild": "node scripts/flatten-segments.mjs",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
@@ -24,8 +25,7 @@
     "next": "16.4.3",
     "pdf-lib": "1.17.1",
     "react": "19.3.1",
-    "react-dom": "19.3.1",
-    "server-only": "0.0.1"
+    "react-dom": "19.3.1"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "4.3.3",
