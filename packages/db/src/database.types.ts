@@ -146,6 +146,7 @@ export type Database = {
       }
       scopus_requests: {
         Row: {
+          admin_note: string | null
           contact: string
           created_at: string
           deadline: string | null
@@ -162,6 +163,7 @@ export type Database = {
           user_id: string
         }
         Insert: {
+          admin_note?: string | null
           contact: string
           created_at?: string
           deadline?: string | null
@@ -178,6 +180,7 @@ export type Database = {
           user_id: string
         }
         Update: {
+          admin_note?: string | null
           contact?: string
           created_at?: string
           deadline?: string | null
@@ -200,6 +203,20 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      admin_list_requests: {
+        Args: { p_status?: Database["public"]["Enums"]["request_status"] }
+        Returns: Json
+      }
+      admin_stats: { Args: never; Returns: Json }
+      admin_status: { Args: never; Returns: Json }
+      admin_update_request: {
+        Args: {
+          p_id: string
+          p_note: string
+          p_status: Database["public"]["Enums"]["request_status"]
+        }
+        Returns: undefined
+      }
       click_complete: { Args: { p_form: Json }; Returns: Json }
       click_prepare: { Args: { p_form: Json }; Returns: Json }
       complete_practice: { Args: { p_session_id: string }; Returns: Json }
