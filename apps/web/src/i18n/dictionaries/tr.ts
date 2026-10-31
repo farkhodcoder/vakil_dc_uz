@@ -15,6 +15,8 @@ export const tr: Dictionary = {
     toHome: "Ana sayfaya dön",
   },
   nav: {
+    greenCard: "Green Card",
+    scopus: "Scopus",
     practice: "Alıştırma",
     cabinet: "Hesabım",
     login: "Giriş",
@@ -161,6 +163,169 @@ export const tr: Dictionary = {
     statuses: { created: "Oluşturuldu", prepared: "Bekliyor", paid: "Ödendi", cancelled: "İptal edildi" },
     privacy:
       "Yalnızca ödemeleri ve alıştırma sayısını saklarız. Pasaport, fotoğraf ve form verileri yalnızca tarayıcınızda bulunur.",
+    requestsTitle: "Scopus başvurularım",
+    noRequests: "Henüz başvuru yok.",
+  },
+  catalog: {
+    metaTitle: "vakil — belge ve başvurularda dijital temsilciniz",
+    metaDescription: "Green Card (DV) başvurusunu hatasız hazırlama ve Scopus dergisinde makale yayımlamaya rehberlik — tek yerde.",
+    badge: "Dijital temsilciniz",
+    title: "Önemli belge ve başvuruları hatasız hazırlayın",
+    lead: "Şu an en çok ihtiyaç duyulan hizmetler: Green Card başvuru alıştırması ve bilimsel makalenin Scopus dergisinde yayımlanmasına rehberlik.",
+    trend: "Gündemde",
+    newBadge: "Yeni",
+    dvTitle: "Green Card (DV) başvuru alıştırması",
+    dvText: "Resmi formdaki alanlar ve sıra, kamerayla DV fotoğrafı, her hataya doğrudan geçiş ve PDF örneği.",
+    dvCta: "Green Card hizmeti",
+    scopusTitle: "Scopus'ta makale yayımlama",
+    scopusText: "Dergi seçiminden hakemlere yanıta kadar: biçimlendirme, akademik İngilizce düzeltme, intihal kontrolü ve gönderim desteği.",
+    scopusCta: "Scopus hizmeti",
+    soonTitle: "Yakında",
+    soonText: "Yeni hizmetler gündeme göre eklenir.",
+    whyTitle: "Neden vakil",
+    why: [
+      {
+        title: "Hatasız",
+        text: "Her gereklilik kontrol edilir; bir hata varsa tam yerini gösteririz."
+      },
+      {
+        title: "Dürüst",
+        text: "Garanti vaat etmeyiz, resmi süreçlerin yerine geçmeyiz — hazırlanmanıza yardım ederiz."
+      },
+      {
+        title: "5 dilde",
+        text: "Özbekçe (Latin ve Kiril), Rusça, İngilizce ve Türkçe."
+      }
+    ]
+  },
+  scopus: {
+    metaTitle: "Scopus'ta yayına rehberlik | vakil",
+    metaDescription: "Scopus'ta dizinlenen dergi seçimi, makale biçimlendirme, akademik İngilizce düzeltme, intihal kontrolü, gönderim ve hakemlere yanıt.",
+    badge: "Akademik yayın",
+    title: "Makalenizi Scopus dergisine kadar götürüyoruz",
+    lead: "Araştırma ve metin sizin. Doğru dergiyi seçmenize, makaleyi gerekliliklere uyarlamanıza ve yayına kadar her adımda size eşlik ediyoruz.",
+    cta: "Başvuru bırak",
+    stepsTitle: "Adım adım",
+    steps: [
+      {
+        title: "Danışmanlık",
+        text: "Konu, makale türü, hedef ve süreyi netleştiririz."
+      },
+      {
+        title: "Dergi seçimi",
+        text: "Scopus'ta gerçekten dizinlenen dergileri kontrol ederiz: çeyreklik, alan, APC ücreti, değerlendirme süresi. Yağmacı dergilere karşı koruma."
+      },
+      {
+        title: "Biçimlendirme",
+        text: "Derginin gerekliliklerine göre: yapı (IMRaD), özet, anahtar kelimeler, atıf stili."
+      },
+      {
+        title: "Akademik düzeltme",
+        text: "İngilizce dil ve akademik üslup düzeltmesi."
+      },
+      {
+        title: "İntihal ve YZ kontrolü",
+        text: "Benzerlik raporu ve düzeltme önerileri."
+      },
+      {
+        title: "Gönderim",
+        text: "Dergi sistemine kayıt, cover letter ve gönderimde yardım."
+      },
+      {
+        title: "Hakemlere yanıt",
+        text: "Yorumlara göre düzeltmeler ve yanıt mektubu."
+      },
+      {
+        title: "Yayına kadar takip",
+        text: "Kabul ve yayına kadar durumu takip ederiz."
+      }
+    ],
+    packagesTitle: "Paketler",
+    packages: {
+      select: {
+        name: "Dergi seçimi",
+        text: "Makaleniz için uygun ve güvenilir Scopus dergileri listesi.",
+        items: [
+          "Dizin kontrolü",
+          "Çeyreklik, APC ve süre karşılaştırması",
+          "Yağmacı dergilere karşı koruma"
+        ]
+      },
+      edit: {
+        name: "Düzeltme + biçimlendirme",
+        text: "Makaleyi seçilen derginin gerekliliklerine uyarlama.",
+        items: [
+          "Akademik İngilizce düzeltme",
+          "Dergi şablonuna biçimlendirme",
+          "İntihal raporu"
+        ]
+      },
+      full: {
+        name: "Tam rehberlik",
+        text: "Dergi seçiminden yayına kadar tüm adımlar.",
+        items: [
+          "Tüm adımlar",
+          "Hakemlere yanıt",
+          "Yayına kadar takip"
+        ]
+      }
+    },
+    priceNote: "Ücret makalenin uzunluğuna, aşamasına ve süresine göre belirlenir — başvuru bırakın, bir uzman sizinle iletişime geçsin.",
+    rulesTitle: "Dürüst çalışırız",
+    rulesYes: [
+      "Araştırma ve metin yazara aittir — biz danışman ve editörüz",
+      "Yalnızca Scopus'ta gerçekten dizinlenen dergiler",
+      "Her adım şeffaftır"
+    ],
+    rulesNo: [
+      "“Yayın garantisi” — kararı yalnızca dergi editörleri verir",
+      "Makaleyi müşteri adına yazmak",
+      "Yazarlık satmak veya sahte ortak yazarlık"
+    ],
+    formTitle: "Başvuru bırak",
+    formLead: "Kısaca yazın — uzmanımız sizinle iletişime geçip sonraki adımları belirleyecek.",
+    loginToApply: "Başvuru bırakmak için Google ile giriş yapın",
+    fields: {
+      package: "Paket",
+      field: "Bilim alanı",
+      fieldHint: "Örneğin: ekonomi, eğitim, tıp",
+      title: "Makale konusu",
+      stage: "Makale aşaması",
+      target: "Hedef",
+      language: "Makale dili",
+      deadline: "İstenen süre",
+      contact: "İletişim (Telegram veya telefon)",
+      contactHint: "Örneğin: @username veya +998 90 123 45 67",
+      message: "Ek bilgi",
+      optional: "isteğe bağlı"
+    },
+    stages: {
+      idea: "Fikir aşamasında",
+      draft: "Taslak hazır",
+      ready: "Bitmiş makale",
+      revision: "Dergiden düzeltmeye döndü"
+    },
+    targets: {
+      any: "Fark etmez",
+      q1q2: "Q1–Q2 dergi",
+      q3q4: "Q3–Q4 dergi"
+    },
+    submit: "Başvuruyu gönder",
+    submitting: "Gönderiliyor…",
+    sentTitle: "Başvurunuz alındı!",
+    sentLead: "Uzmanımız belirttiğiniz iletişim bilgisiyle size ulaşacak. Başvuru durumunu hesabınızda görebilirsiniz.",
+    another: "Yeni başvuru bırak",
+    failed: "Gönderilemedi. Alanları kontrol edip tekrar deneyin.",
+    tooMany: "Günde 5'ten fazla başvuru bırakılamaz. Yarın tekrar deneyin.",
+    required: "Bu alan zorunludur.",
+    statuses: {
+      new: "Yeni",
+      in_review: "İnceleniyor",
+      in_progress: "Üzerinde çalışılıyor",
+      done: "Tamamlandı",
+      cancelled: "İptal edildi"
+    },
+    privacyNote: "Başvurudaki bilgiler yalnızca sizinle iletişim kurmak ve hizmet vermek için saklanır."
   },
   practice: {
     steps: { passport: "Pasaport", photo: "Fotoğraf", part1: "Form 1", part2: "Form 2", review: "Kontrol" },

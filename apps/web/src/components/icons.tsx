@@ -108,3 +108,16 @@ export const ShieldIcon = ({ className = "size-5" }: IconProps) => (
     <path d="M9 12l2 2 4-4" />
   </svg>
 );
+
+export const BookIcon = ({ className = "size-5" }: IconProps) => (
+  <svg {...base} className={className}>
+    <path d="M4.5 5.5A1.5 1.5 0 0 1 6 4h12.5v13H6a1.5 1.5 0 0 0-1.5 1.5Z" />
+    <path d="M4.5 18.5A1.5 1.5 0 0 0 6 20h12.5v-3M8.5 8h6M8.5 11h4" />
+  </svg>
+);
+
+export const SparkIcon = ({ className = "size-5" }: IconProps) => (
+  <svg {...base} className={className}>
+    <path d="M12 3.5v4M12 16.5v4M3.5 12h4M16.5 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6" />
+  </svg>
+);

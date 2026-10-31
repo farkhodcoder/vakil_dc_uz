@@ -28,8 +28,8 @@ export async function generateStaticParams() {
 export async function generateMetadata(): Promise<Metadata> {
   const { t } = await getDictionary();
   return {
-    title: t.meta.title,
-    description: t.meta.description,
+    title: t.catalog.metaTitle,
+    description: t.catalog.metaDescription,
     applicationName: "vakil",
   };
 }

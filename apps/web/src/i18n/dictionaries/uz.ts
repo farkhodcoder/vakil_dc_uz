@@ -15,6 +15,8 @@ export const uz: Dictionary = {
     toHome: "Bosh sahifaga",
   },
   nav: {
+    greenCard: "Green Card",
+    scopus: "Scopus",
     practice: "Mashq",
     cabinet: "Kabinet",
     login: "Kirish",
@@ -161,6 +163,169 @@ export const uz: Dictionary = {
     statuses: { created: "Yaratildi", prepared: "Kutilmoqda", paid: "To‘langan", cancelled: "Bekor qilingan" },
     privacy:
       "Biz faqat to‘lovlar va mashqlar sonini saqlaymiz. Pasport, foto va anketa ma’lumotlari faqat sizning brauzeringizda bo‘ladi.",
+    requestsTitle: "Scopus arizalarim",
+    noRequests: "Hali ariza yo‘q.",
+  },
+  catalog: {
+    metaTitle: "vakil — hujjat va arizalarda raqamli vakilingiz",
+    metaDescription: "Green Card (DV) arizasini xatosiz tayyorlash va Scopus jurnalida maqola nashr qilishga hamrohlik — bir joyda.",
+    badge: "Sizning raqamli vakilingiz",
+    title: "Muhim hujjat va arizalarni xatosiz tayyorlang",
+    lead: "Hozir eng dolzarb xizmatlar: Green Card arizasini mashq qilish va ilmiy maqolani Scopus jurnalida nashr qilishga hamrohlik.",
+    trend: "Dolzarb",
+    newBadge: "Yangi",
+    dvTitle: "Green Card (DV) arizasi mashqi",
+    dvText: "Rasmiy formadagi maydonlar va tartib, kamerada DV fotosi, har bir xatoga to‘g‘ridan-to‘g‘ri o‘tish va PDF namuna.",
+    dvCta: "Green Card xizmati",
+    scopusTitle: "Scopus’da maqola nashr qilish",
+    scopusText: "Jurnal tanlashdan taqrizchilarga javobgacha: formatlash, ilmiy til tahriri, plagiat tekshiruvi va topshirishga hamrohlik.",
+    scopusCta: "Scopus xizmati",
+    soonTitle: "Tez orada",
+    soonText: "Yangi xizmatlar dolzarb mavzularga qarab qo‘shiladi.",
+    whyTitle: "Nega vakil",
+    why: [
+      {
+        title: "Xatosiz",
+        text: "Har bir talab tekshiriladi, xato bo‘lsa — aynan qayerda ekanini ko‘rsatamiz."
+      },
+      {
+        title: "Halol",
+        text: "Kafolat va’da qilmaymiz, rasmiy jarayon o‘rniga o‘tmaymiz — tayyorlanishga yordam beramiz."
+      },
+      {
+        title: "5 tilda",
+        text: "O‘zbek (lotin va kirill), rus, ingliz va turk tillarida."
+      }
+    ]
+  },
+  scopus: {
+    metaTitle: "Scopus’da maqola nashr qilishga hamrohlik | vakil",
+    metaDescription: "Scopus’da indekslangan jurnal tanlash, qo‘lyozmani formatlash, ilmiy ingliz tili tahriri, plagiat tekshiruvi, topshirish va taqrizchilarga javob.",
+    badge: "Ilmiy nashr",
+    title: "Maqolangizni Scopus jurnaligacha olib boramiz",
+    lead: "Tadqiqot va matn — sizniki. Biz to‘g‘ri jurnalni tanlash, qo‘lyozmani talablarga moslash va chop etilgunicha har bir bosqichda hamroh bo‘lamiz.",
+    cta: "Ariza qoldirish",
+    stepsTitle: "Bosqichma-bosqich",
+    steps: [
+      {
+        title: "Konsultatsiya",
+        text: "Mavzu, maqola turi, maqsad va muddatni aniqlaymiz."
+      },
+      {
+        title: "Jurnal tanlash",
+        text: "Scopus’da haqiqatan indekslangan jurnallarni tekshiramiz: kvartil, soha, APC to‘lovi, ko‘rib chiqish muddati. Yirtqich jurnallardan himoya."
+      },
+      {
+        title: "Formatlash",
+        text: "Jurnal talablari bo‘yicha: tuzilma (IMRaD), annotatsiya, kalit so‘zlar, iqtiboslar uslubi."
+      },
+      {
+        title: "Ilmiy til tahriri",
+        text: "Ingliz tili va ilmiy uslubni tahrirlash."
+      },
+      {
+        title: "Plagiat va AI tekshiruvi",
+        text: "O‘xshashlik hisoboti va tuzatish bo‘yicha tavsiyalar."
+      },
+      {
+        title: "Topshirish",
+        text: "Jurnal tizimida ro‘yxatdan o‘tish, cover letter va topshirishga yordam."
+      },
+      {
+        title: "Taqrizchilarga javob",
+        text: "Izohlar bo‘yicha tuzatishlar va javob xatini tayyorlash."
+      },
+      {
+        title: "Nashrgacha kuzatuv",
+        text: "Qabul qilinguncha va chop etilguncha holatni kuzatib boramiz."
+      }
+    ],
+    packagesTitle: "Paketlar",
+    packages: {
+      select: {
+        name: "Jurnal tanlash",
+        text: "Maqolangiz uchun mos va ishonchli Scopus jurnallari ro‘yxati.",
+        items: [
+          "Indekslanganini tekshirish",
+          "Kvartil, APC, muddat taqqoslovi",
+          "Yirtqich jurnallardan himoya"
+        ]
+      },
+      edit: {
+        name: "Tahrir + formatlash",
+        text: "Qo‘lyozmani tanlangan jurnal talablariga moslash.",
+        items: [
+          "Ilmiy ingliz tili tahriri",
+          "Jurnal shabloniga formatlash",
+          "Plagiat hisoboti"
+        ]
+      },
+      full: {
+        name: "To‘liq hamrohlik",
+        text: "Jurnal tanlashdan chop etilgunicha barcha bosqichlar.",
+        items: [
+          "Barcha bosqichlar",
+          "Taqrizchilarga javob",
+          "Nashrgacha kuzatuv"
+        ]
+      }
+    },
+    priceNote: "Narx maqola hajmi, holati va muddatiga qarab kelishiladi — ariza qoldiring, mutaxassis bog‘lanadi.",
+    rulesTitle: "Halol ishlaymiz",
+    rulesYes: [
+      "Tadqiqot va matn muallifniki — biz konsultant va muharrirmiz",
+      "Faqat Scopus’da haqiqatan indekslangan jurnallar",
+      "Har bir bosqich shaffof: nima qilinayotgani ko‘rinadi"
+    ],
+    rulesNo: [
+      "“Chop etish kafolati” — qarorni faqat jurnal tahririyati qabul qiladi",
+      "Maqolani mijoz o‘rniga yozib berish",
+      "Mualliflik joyini sotish yoki soxta hammualliflik"
+    ],
+    formTitle: "Ariza qoldirish",
+    formLead: "Qisqacha yozing — mutaxassisimiz siz bilan bog‘lanib, keyingi qadamlarni kelishib oladi.",
+    loginToApply: "Ariza qoldirish uchun Google bilan kiring",
+    fields: {
+      package: "Paket",
+      field: "Fan sohasi",
+      fieldHint: "Masalan: iqtisodiyot, pedagogika, tibbiyot",
+      title: "Maqola mavzusi",
+      stage: "Maqola holati",
+      target: "Maqsad",
+      language: "Maqola tili",
+      deadline: "Kerakli muddat",
+      contact: "Aloqa uchun (Telegram yoki telefon)",
+      contactHint: "Masalan: @username yoki +998 90 123 45 67",
+      message: "Qo‘shimcha ma’lumot",
+      optional: "ixtiyoriy"
+    },
+    stages: {
+      idea: "G‘oya bosqichida",
+      draft: "Qoralama bor",
+      ready: "Tayyor qo‘lyozma",
+      revision: "Jurnaldan tuzatishga qaytgan"
+    },
+    targets: {
+      any: "Farqi yo‘q",
+      q1q2: "Q1–Q2 jurnal",
+      q3q4: "Q3–Q4 jurnal"
+    },
+    submit: "Arizani yuborish",
+    submitting: "Yuborilmoqda…",
+    sentTitle: "Arizangiz qabul qilindi!",
+    sentLead: "Mutaxassisimiz ko‘rsatgan kontaktingiz orqali bog‘lanadi. Ariza holatini kabinetda ko‘rasiz.",
+    another: "Yana ariza qoldirish",
+    failed: "Yuborib bo‘lmadi. Maydonlarni tekshirib, qayta urinib ko‘ring.",
+    tooMany: "Bir kunda 5 tadan ortiq ariza qoldirib bo‘lmaydi. Ertaga urinib ko‘ring.",
+    required: "Bu maydon to‘ldirilishi shart.",
+    statuses: {
+      new: "Yangi",
+      in_review: "Ko‘rib chiqilmoqda",
+      in_progress: "Ishlanmoqda",
+      done: "Yakunlandi",
+      cancelled: "Bekor qilindi"
+    },
+    privacyNote: "Arizadagi ma’lumotlar faqat siz bilan bog‘lanish va xizmat ko‘rsatish uchun saqlanadi."
   },
   practice: {
     steps: { passport: "Pasport", photo: "Foto", part1: "Anketa 1", part2: "Anketa 2", review: "Tekshirish" },

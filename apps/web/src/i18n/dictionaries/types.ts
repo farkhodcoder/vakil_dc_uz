@@ -3,6 +3,11 @@ import type { LabelKey } from "@/features/practice/labels";
 import type { Education, Marital } from "@/features/practice/schema";
 import type { IssueCode, StepId } from "@/features/practice/validate";
 
+export type ScopusStage = "idea" | "draft" | "ready" | "revision";
+export type ScopusTarget = "any" | "q1q2" | "q3q4";
+export type ScopusPackage = "select" | "edit" | "full";
+export type RequestStatus = "new" | "in_review" | "in_progress" | "done" | "cancelled";
+
 export type LiveHint = "loading" | "noface" | "multi" | "closer" | "farther" | "center" | "tilt" | "ok";
 export type PaymentStatusKey = "created" | "prepared" | "paid" | "cancelled";
 
@@ -21,6 +26,8 @@ export interface Dictionary {
     toHome: string;
   };
   nav: {
+    greenCard: string;
+    scopus: string;
     practice: string;
     cabinet: string;
     login: string;
@@ -105,6 +112,72 @@ export interface Dictionary {
     status: string;
     statuses: Record<PaymentStatusKey, string>;
     privacy: string;
+    requestsTitle: string;
+    noRequests: string;
+  };
+  catalog: {
+    metaTitle: string;
+    metaDescription: string;
+    badge: string;
+    title: string;
+    lead: string;
+    trend: string;
+    newBadge: string;
+    dvTitle: string;
+    dvText: string;
+    dvCta: string;
+    scopusTitle: string;
+    scopusText: string;
+    scopusCta: string;
+    soonTitle: string;
+    soonText: string;
+    whyTitle: string;
+    why: { title: string; text: string }[];
+  };
+  scopus: {
+    metaTitle: string;
+    metaDescription: string;
+    badge: string;
+    title: string;
+    lead: string;
+    cta: string;
+    stepsTitle: string;
+    steps: { title: string; text: string }[];
+    packagesTitle: string;
+    packages: Record<ScopusPackage, { name: string; text: string; items: string[] }>;
+    priceNote: string;
+    rulesTitle: string;
+    rulesYes: string[];
+    rulesNo: string[];
+    formTitle: string;
+    formLead: string;
+    loginToApply: string;
+    fields: {
+      package: string;
+      field: string;
+      fieldHint: string;
+      title: string;
+      stage: string;
+      target: string;
+      language: string;
+      deadline: string;
+      contact: string;
+      contactHint: string;
+      message: string;
+      optional: string;
+    };
+    stages: Record<ScopusStage, string>;
+    targets: Record<ScopusTarget, string>;
+    submit: string;
+    submitting: string;
+    sentTitle: string;
+    sentLead: string;
+    another: string;
+    failed: string;
+    tooMany: string;
+    required: string;
+    statuses: Record<RequestStatus, string>;
+    privacyNote: string;
   };
   practice: {
     steps: Record<StepId, string>;

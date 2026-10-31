@@ -14,12 +14,14 @@ export function SiteHeader({ lang, t }: { lang: Lang; t: Dictionary }) {
           <Logo />
         </Link>
         <div className="flex items-center gap-2">
-          <Link
-            href={`/${lang}/mashq/`}
-            className="hidden min-h-11 items-center rounded-full px-3 text-sm font-semibold text-ink hover:text-brand sm:inline-flex"
-          >
-            {t.nav.practice}
-          </Link>
+          <nav className="hidden items-center sm:flex">
+            <Link href={`/${lang}/green-card/`} className="inline-flex min-h-11 items-center rounded-full px-3 text-sm font-semibold text-ink hover:text-brand">
+              {t.nav.greenCard}
+            </Link>
+            <Link href={`/${lang}/scopus/`} className="inline-flex min-h-11 items-center rounded-full px-3 text-sm font-semibold text-ink hover:text-brand">
+              {t.nav.scopus}
+            </Link>
+          </nav>
           <Suspense fallback={<div className="h-11 w-[72px] sm:w-[124px]" />}>
             <LangSwitcher current={lang} label={t.nav.language} />
           </Suspense>

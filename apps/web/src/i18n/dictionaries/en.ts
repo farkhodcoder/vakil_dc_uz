@@ -16,6 +16,8 @@ export const en: Dictionary = {
     toHome: "Go to home page",
   },
   nav: {
+    greenCard: "Green Card",
+    scopus: "Scopus",
     practice: "Practice",
     cabinet: "Account",
     login: "Sign in",
@@ -162,6 +164,169 @@ export const en: Dictionary = {
     statuses: { created: "Created", prepared: "Pending", paid: "Paid", cancelled: "Cancelled" },
     privacy:
       "We only store payments and the number of practices. Passport, photo and form data exist only in your browser.",
+    requestsTitle: "My Scopus requests",
+    noRequests: "No requests yet.",
+  },
+  catalog: {
+    metaTitle: "vakil — your digital representative for documents and applications",
+    metaDescription: "Prepare your Green Card (DV) entry without mistakes and get guided support to publish in a Scopus-indexed journal — in one place.",
+    badge: "Your digital representative",
+    title: "Prepare important documents and applications without mistakes",
+    lead: "Our most in-demand services right now: Green Card entry practice and guided support to publish a research paper in a Scopus journal.",
+    trend: "Trending",
+    newBadge: "New",
+    dvTitle: "Green Card (DV) entry practice",
+    dvText: "The fields and order of the official form, a DV photo with your camera, a jump to every mistake and a PDF sample.",
+    dvCta: "Green Card service",
+    scopusTitle: "Publish in Scopus",
+    scopusText: "From choosing a journal to answering reviewers: formatting, academic English editing, plagiarism check and submission support.",
+    scopusCta: "Scopus service",
+    soonTitle: "Coming soon",
+    soonText: "New services are added based on what is in demand.",
+    whyTitle: "Why vakil",
+    why: [
+      {
+        title: "No mistakes",
+        text: "Every requirement is checked; if something is wrong we show exactly where."
+      },
+      {
+        title: "Honest",
+        text: "We never promise guarantees or replace official processes — we help you prepare."
+      },
+      {
+        title: "5 languages",
+        text: "Uzbek (Latin and Cyrillic), Russian, English and Turkish."
+      }
+    ]
+  },
+  scopus: {
+    metaTitle: "Guided support to publish in Scopus | vakil",
+    metaDescription: "Choosing a Scopus-indexed journal, manuscript formatting, academic English editing, plagiarism check, submission and responses to reviewers.",
+    badge: "Academic publishing",
+    title: "We guide your paper all the way to a Scopus journal",
+    lead: "The research and the text are yours. We help you choose the right journal, adapt the manuscript to its requirements and support you at every step until publication.",
+    cta: "Submit a request",
+    stepsTitle: "Step by step",
+    steps: [
+      {
+        title: "Consultation",
+        text: "We clarify the topic, article type, goal and timeline."
+      },
+      {
+        title: "Journal selection",
+        text: "We check journals that are genuinely indexed in Scopus: quartile, field, APC, review time. Protection from predatory journals."
+      },
+      {
+        title: "Formatting",
+        text: "According to the journal's requirements: structure (IMRaD), abstract, keywords, citation style."
+      },
+      {
+        title: "Academic editing",
+        text: "Editing the English language and academic style."
+      },
+      {
+        title: "Plagiarism and AI check",
+        text: "A similarity report and recommendations for fixes."
+      },
+      {
+        title: "Submission",
+        text: "Help with the journal system registration, cover letter and submission."
+      },
+      {
+        title: "Responses to reviewers",
+        text: "Revisions and a response letter based on the comments."
+      },
+      {
+        title: "Tracking to publication",
+        text: "We track the status until acceptance and publication."
+      }
+    ],
+    packagesTitle: "Packages",
+    packages: {
+      select: {
+        name: "Journal selection",
+        text: "A list of suitable and trustworthy Scopus journals for your paper.",
+        items: [
+          "Indexing verification",
+          "Quartile, APC and timeline comparison",
+          "Protection from predatory journals"
+        ]
+      },
+      edit: {
+        name: "Editing + formatting",
+        text: "Adapting the manuscript to the chosen journal's requirements.",
+        items: [
+          "Academic English editing",
+          "Formatting to the journal template",
+          "Plagiarism report"
+        ]
+      },
+      full: {
+        name: "Full support",
+        text: "Every step from journal selection to publication.",
+        items: [
+          "All steps",
+          "Responses to reviewers",
+          "Tracking to publication"
+        ]
+      }
+    },
+    priceNote: "The price depends on the length, stage and timeline of the paper — submit a request and a specialist will contact you.",
+    rulesTitle: "We work honestly",
+    rulesYes: [
+      "The research and text belong to the author — we are consultants and editors",
+      "Only journals genuinely indexed in Scopus",
+      "Every step is transparent"
+    ],
+    rulesNo: [
+      "A “publication guarantee” — only the journal's editors decide",
+      "Writing the paper on the client's behalf",
+      "Selling authorship or fake co-authorship"
+    ],
+    formTitle: "Submit a request",
+    formLead: "Tell us briefly — our specialist will contact you and agree on the next steps.",
+    loginToApply: "Sign in with Google to submit a request",
+    fields: {
+      package: "Package",
+      field: "Field of study",
+      fieldHint: "For example: economics, education, medicine",
+      title: "Paper topic",
+      stage: "Paper stage",
+      target: "Goal",
+      language: "Paper language",
+      deadline: "Desired deadline",
+      contact: "Contact (Telegram or phone)",
+      contactHint: "For example: @username or +998 90 123 45 67",
+      message: "Additional information",
+      optional: "optional"
+    },
+    stages: {
+      idea: "Idea stage",
+      draft: "Draft ready",
+      ready: "Finished manuscript",
+      revision: "Returned by a journal for revision"
+    },
+    targets: {
+      any: "No preference",
+      q1q2: "Q1–Q2 journal",
+      q3q4: "Q3–Q4 journal"
+    },
+    submit: "Send request",
+    submitting: "Sending…",
+    sentTitle: "Your request has been received!",
+    sentLead: "Our specialist will contact you via the contact you provided. You can see the request status in your account.",
+    another: "Submit another request",
+    failed: "Could not send. Check the fields and try again.",
+    tooMany: "You cannot submit more than 5 requests per day. Please try again tomorrow.",
+    required: "This field is required.",
+    statuses: {
+      new: "New",
+      in_review: "Under review",
+      in_progress: "In progress",
+      done: "Completed",
+      cancelled: "Cancelled"
+    },
+    privacyNote: "The details in your request are stored only to contact you and provide the service."
   },
   practice: {
     steps: { passport: "Passport", photo: "Photo", part1: "Form 1", part2: "Form 2", review: "Review" },

@@ -144,6 +144,57 @@ export type Database = {
           },
         ]
       }
+      scopus_requests: {
+        Row: {
+          contact: string
+          created_at: string
+          deadline: string | null
+          field: string
+          id: string
+          language: string
+          message: string | null
+          package: Database["public"]["Enums"]["scopus_package"]
+          stage: Database["public"]["Enums"]["scopus_stage"]
+          status: Database["public"]["Enums"]["request_status"]
+          target: Database["public"]["Enums"]["scopus_target"]
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          contact: string
+          created_at?: string
+          deadline?: string | null
+          field: string
+          id?: string
+          language: string
+          message?: string | null
+          package: Database["public"]["Enums"]["scopus_package"]
+          stage: Database["public"]["Enums"]["scopus_stage"]
+          status?: Database["public"]["Enums"]["request_status"]
+          target?: Database["public"]["Enums"]["scopus_target"]
+          title: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          contact?: string
+          created_at?: string
+          deadline?: string | null
+          field?: string
+          id?: string
+          language?: string
+          message?: string | null
+          package?: Database["public"]["Enums"]["scopus_package"]
+          stage?: Database["public"]["Enums"]["scopus_stage"]
+          status?: Database["public"]["Enums"]["request_status"]
+          target?: Database["public"]["Enums"]["scopus_target"]
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
@@ -153,11 +204,16 @@ export type Database = {
       click_prepare: { Args: { p_form: Json }; Returns: Json }
       complete_practice: { Args: { p_session_id: string }; Returns: Json }
       create_practice_payment: { Args: never; Returns: Json }
+      create_scopus_request: { Args: { p: Json }; Returns: string }
       my_practice: { Args: never; Returns: Json }
     }
     Enums: {
       payment_status: "created" | "prepared" | "paid" | "cancelled"
       practice_status: "available" | "completed"
+      request_status: "new" | "in_review" | "in_progress" | "done" | "cancelled"
+      scopus_package: "select" | "edit" | "full"
+      scopus_stage: "idea" | "draft" | "ready" | "revision"
+      scopus_target: "any" | "q1q2" | "q3q4"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -287,6 +343,10 @@ export const Constants = {
     Enums: {
       payment_status: ["created", "prepared", "paid", "cancelled"],
       practice_status: ["available", "completed"],
+      request_status: ["new", "in_review", "in_progress", "done", "cancelled"],
+      scopus_package: ["select", "edit", "full"],
+      scopus_stage: ["idea", "draft", "ready", "revision"],
+      scopus_target: ["any", "q1q2", "q3q4"],
     },
   },
 } as const

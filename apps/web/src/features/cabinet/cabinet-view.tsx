@@ -16,6 +16,22 @@ const STATUS_STYLE = {
   cancelled: "bg-bad-50 text-bad",
 } as const;
 
+const REQUEST_STYLE = {
+  new: "bg-brand-50 text-brand",
+  in_review: "bg-warn-50 text-warn",
+  in_progress: "bg-warn-50 text-warn",
+  done: "bg-ok-50 text-ok-ink",
+  cancelled: "bg-bad-50 text-bad",
+} as const;
+
+interface RequestRow {
+  id: string;
+  title: string;
+  package: "select" | "edit" | "full";
+  status: keyof typeof REQUEST_STYLE;
+  created_at: string;
+}
+
 interface PaymentRow {
   id: string;
   amount_tiyin: number;
@@ -26,7 +42,11 @@ interface PaymentRow {
 /** Kabinet: RLS — foydalanuvchi faqat o'z to'lovlari va mashqlarini ko'radi */
 export function CabinetView({ lang, t }: { lang: Lang; t: Dictionary }) {
   const user = useRequiredUser(lang, `/${lang}/kabinet/`);
-  const [data, setData] = useState<{ p: { available: number; completed: number }; payments: PaymentRow[] } | null>(null);
+  const [data, setData] = useState<{
+    p: { available: number; completed: number };
+    payments: PaymentRow[];
+    requests: RequestRow[];
+  } | null>(null);
 
   useEffect(() => {
     if (!user) return;
@@ -35,11 +55,13 @@ export function CabinetView({ lang, t }: { lang: Lang; t: Dictionary }) {
     Promise.all([
       supabase.rpc("my_practice"),
       supabase.from("payments").select("id, amount_tiyin, status, created_at").order("created_at", { ascending: false }).limit(50),
-    ]).then(([practice, payments]) => {
+      supabase.from("scopus_requests").select("id, title, package, status, created_at").order("created_at", { ascending: false }).limit(50),
+    ]).then(([practice, payments, requests]) => {
       if (!active) return;
       setData({
         p: (practice.data ?? { available: 0, completed: 0 }) as { available: number; completed: number },
         payments: (payments.data ?? []) as PaymentRow[],
+        requests: (requests.data ?? []) as RequestRow[],
       });
     });
     return () => {
@@ -55,7 +77,7 @@ export function CabinetView({ lang, t }: { lang: Lang; t: Dictionary }) {
     );
   }
 
-  const { p, payments } = data;
+  const { p, payments, requests } = data;
   const dateFmt = new Intl.DateTimeFormat(HTML_LANG[lang], { dateStyle: "medium", timeStyle: "short", timeZone: "Asia/Tashkent" });
   const c = t.cabinet;
   const email = user.email ?? "";
@@ -91,6 +113,34 @@ export function CabinetView({ lang, t }: { lang: Lang; t: Dictionary }) {
       >
         {p.available > 0 ? c.continue : c.buy}
       </Link>
+
+      <section className="rounded-2xl border border-line bg-surface p-5">
+        <h2 className="mb-3 text-lg font-extrabold text-ink">{c.requestsTitle}</h2>
+        {requests.length === 0 ? (
+          <p className="text-muted">
+            {c.noRequests}{" "}
+            <Link href={`/${lang}/scopus/`} className="font-bold text-brand hover:underline">
+              {t.catalog.scopusCta}
+            </Link>
+          </p>
+        ) : (
+          <ul className="flex flex-col divide-y divide-line">
+            {requests.map((row) => (
+              <li key={row.id} className="flex flex-wrap items-center justify-between gap-2 py-3">
+                <div className="min-w-0">
+                  <p className="font-semibold text-ink">{row.title}</p>
+                  <p className="text-sm text-muted">
+                    {t.scopus.packages[row.package].name} · {dateFmt.format(new Date(row.created_at))}
+                  </p>
+                </div>
+                <span className={`rounded-full px-2.5 py-1 text-xs font-bold ${REQUEST_STYLE[row.status]}`}>
+                  {t.scopus.statuses[row.status]}
+                </span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
 
       <section className="rounded-2xl border border-line bg-surface p-5">
         <h2 className="mb-3 text-lg font-extrabold text-ink">{c.payments}</h2>
