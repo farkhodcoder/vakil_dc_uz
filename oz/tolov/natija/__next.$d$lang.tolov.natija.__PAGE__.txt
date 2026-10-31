@@ -1,0 +1,33 @@
+3:"$Sreact.fragment"
+4:"/vakil_dc_uz/_next/static/chunks/2b6_opqkwf_pf.js"
+5:I[86555,["$4"],"default"]
+6:I[18757,["$4"],"default"]
+d:"$Sreact.suspense"
+e:"/vakil_dc_uz/_next/static/chunks/0uly6h5-vjyxf.js"
+f:"/vakil_dc_uz/_next/static/chunks/36qmuou4sa7ap.js"
+10:"/vakil_dc_uz/_next/static/chunks/0p33px6zoqssa.js"
+11:"PaymentStatusFromUrl"
+12:I[46826,["$e","$f","$10"],"$11"]
+13:I[27993,["$4"],"OutletBoundary"]
+16:"ViewportBoundary"
+17:I[27993,["$4"],"$16"]
+18:"MetadataBoundary"
+19:I[27993,["$4"],"$18"]
+1a:I[34896,["$4"],"IconMark"]
+8:X
+8:C
+9:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$3","c",{"children":[["$","$d",null,{"fallback":["$","div",null,{"className":"min-h-[60vh]"}],"children":["$","$L12",null,{"lang":"oz","t":{"title":"Машқни бошлаш","lead":"Битта тўлиқ машқ: паспорт, фото, расмий формадаги анкета, хатоларни тузатиш ва PDF намуна.","currency":"сўм","perPractice":"1 та машқ","included":["Вақт билан чекланмайди — «Successful» бўлгунча","Фото: камера + DV чизиқлари + авто-кесиш","PDF намуна ва 600×600 фото"],"button":"Click орқали тўлаш","redirecting":"Click саҳифасига ўтилмоқда…","offerAgree":"Тўлов қилиш орқали оммавий оферта шартларига розилик билдирасиз.","notConfigured":"Тўлов тизими ҳали уланмаган. Тез орада ишга тушади.","failed":"Тўловни бошлаб бўлмади. Қайтадан уриниб кўринг.","lastResult":"Охирги машқингиз натижаси шу браузерда ҳали сақланиб турибди.","lastResultButton":"Натижани очиш","resultTitle":"Тўлов ҳолати","pending":"Тўлов тасдиқланишини кутяпмиз…","paid":"Тўлов қабул қилинди! Машқ тайёр.","cancelled":"Тўлов бекор қилинди ёки амалга ошмади. Пул ечилмаган бўлса, қайтадан уриниб кўринг.","slow":"Тасдиқ кечикмоқда. Бир неча дақиқадан сўнг кабинетни текширинг — тўлов ўтган бўлса, машқ ўша ерда пайдо бўлади.","notFound":"Тўлов топилмади.","start":"Машқни бошлаш","retry":"Қайта тўлаш","toCabinet":"Кабинетга ўтиш"}}]}],[["$","script","script-0",{"src":"/vakil_dc_uz/_next/static/chunks/0p33px6zoqssa.js","async":true}]],["$","$L13",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@14"}]}]]}],"p":"$@15","v":null,"s":"$9"}}]]
+a:[["children",{"s":"natija","h":96,"d":{"r":["$","$3","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@b","v":"$8","s":"$9"},"c":"$Qc"}]]
+2:[["children",{"s":"tolov","h":64,"d":{"r":["$","$3","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@7","v":"$8","s":"$9"},"c":"$Qa"}]]
+1:[["children",{"s":{"n":"lang","t":"d","k":"oz","s":[]},"h":48,"c":"$Q2"}]]
+0:{"t":{"t":{"s":"","h":80,"c":"$Q1"},"h":{"r":["$","$3","h",{"children":[null,["$","$L17",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#1B3B6F"}]]}],["$","$L19",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$d",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Тўлов ҳолати | vakil"}],["$","meta","1",{"name":"description","content":"Green Card (DV) аризасини хатосиз тайёрлаш ва Scopus журналида мақола нашр қилишга ҳамроҳлик — бир жойда."}],["$","meta","2",{"name":"application-name","content":"vakil"}],["$","meta","3",{"name":"robots","content":"noindex"}],["$","link","4",{"rel":"icon","href":"/vakil_dc_uz/icon.svg?icon.3me2-4m8hkee2.svg","sizes":"any","type":"image/svg+xml"}],["$","$L1a","5",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@1b","v":null,"s":"$9"}},"a":"$@1c","u":"$@1d","b":"BqQkoQFmqpVleau8jsfok"}
+14:null
+1d:true
+9:300
+9:C
+1c:0
+b:"$undefined"
+7:"$undefined"
+1b:"$undefined"
+15:"$undefined"

@@ -1,0 +1,30 @@
+3:"$Sreact.fragment"
+4:"/vakil_dc_uz/_next/static/chunks/2b6_opqkwf_pf.js"
+5:I[86555,["$4"],"default"]
+6:I[18757,["$4"],"default"]
+10:"ViewportBoundary"
+11:I[27993,["$4"],"$10"]
+12:"MetadataBoundary"
+13:I[27993,["$4"],"$12"]
+14:"$Sreact.suspense"
+15:I[34896,["$4"],"IconMark"]
+8:X
+8:C
+9:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$3","c",{"children":[["$","article",null,{"lang":"ru","className":"mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14","children":[["$","h1",null,{"className":"text-3xl font-extrabold tracking-tight text-brand sm:text-4xl","children":"Политика конфиденциальности"}],["$","p",null,{"className":"mt-2 text-sm text-muted","children":["Дата редакции",": ","2026-10-26"]}],["$","p",null,{"className":"mt-4 rounded-xl border border-warn/25 bg-warn-50 px-4 py-3 text-sm font-semibold text-warn","children":"Проект документа: реквизиты и окончательный текст будут утверждены до запуска."}],["$","div",null,{"className":"mt-8 flex flex-col gap-7","children":[["$","section","1. Что мы храним",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"1. Что мы храним"}],[["$","p","При входе через Google: адрес email и данные профиля, переданные Google (имя, ссылка на фото профиля), — в учётной записи Supabase Auth.",{"className":"mt-2 leading-relaxed text-ink/85","children":"При входе через Google: адрес email и данные профиля, переданные Google (имя, ссылка на фото профиля), — в учётной записи Supabase Auth."}],["$","p","Оплаты: сумма, статус, дата и номера транзакций Click. Тренировки: сколько открыто и завершено.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Оплаты: сумма, статус, дата и номера транзакций Click. Тренировки: сколько открыто и завершено."}]]]}],["$","section","2. Что мы не храним",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"2. Что мы не храним"}],[["$","p","Паспортные данные, скан паспорта, фото и ответы анкеты не отправляются на сервер. Они хранятся только в памяти вашего браузера (sessionStorage) и удаляются при закрытии вкладки. Анализ фото и PDF-образец создаются на вашем устройстве.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Паспортные данные, скан паспорта, фото и ответы анкеты не отправляются на сервер. Они хранятся только в памяти вашего браузера (sessionStorage) и удаляются при закрытии вкладки. Анализ фото и PDF-образец создаются на вашем устройстве."}]]]}],["$","section","3. Цель",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"3. Цель"}],[["$","p","Вход в аккаунт, приём оплаты и учёт права на тренировку.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Вход в аккаунт, приём оплаты и учёт права на тренировку."}]]]}],["$","section","4. Третьи стороны",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"4. Третьи стороны"}],[["$","p","Google — для входа; Click — для оплаты; Supabase — база данных и аутентификация ({location}). Данные не передаются рекламным и аналитическим сервисам.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Google — для входа; Click — для оплаты; Supabase — база данных и аутентификация (Supabase (Frankfurt, EU)). Данные не передаются рекламным и аналитическим сервисам."}]]]}],["$","section","5. Cookie",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"5. Cookie"}],[["$","p","Используются только необходимые cookie: сессия входа и выбранный язык.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Используются только необходимые cookie: сессия входа и выбранный язык."}]]]}],["$","section","6. Ваши права",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"6. Ваши права"}],[["$","p","Чтобы запросить сведения о своих данных или удалить аккаунт, напишите на {email}.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Чтобы запросить сведения о своих данных или удалить аккаунт, напишите на [____]."}]]]}],"$Ld"]}]]}],null,"$Le"]}],"p":"$@f","v":null,"s":"$9"}}]]
+a:[["children",{"s":{"n":"kind","t":"d","k":"maxfiylik","s":[]},"h":96,"d":{"r":["$","$3","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@b","v":"$8","s":"$9"},"c":"$Qc"}]]
+2:[["children",{"s":"hujjat","h":64,"d":{"r":["$","$3","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@7","v":"$8","s":"$9"},"c":"$Qa"}]]
+1:[["children",{"s":{"n":"lang","t":"d","k":"ru","s":[]},"h":48,"c":"$Q2"}]]
+0:{"t":{"t":{"s":"","h":80,"c":"$Q1"},"h":{"r":["$","$3","h",{"children":[null,["$","$L11",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#1B3B6F"}]]}],["$","$L13",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Политика конфиденциальности | vakil"}],["$","meta","1",{"name":"description","content":"Подготовка заявки на Green Card (DV) без ошибок и сопровождение публикации статьи в журнале Scopus — в одном месте."}],["$","meta","2",{"name":"application-name","content":"vakil"}],["$","link","3",{"rel":"icon","href":"/vakil_dc_uz/icon.svg?icon.3me2-4m8hkee2.svg","sizes":"any","type":"image/svg+xml"}],["$","$L15","4",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@16","v":null,"s":"$9"}},"a":"$@17","u":"$@18","b":"BqQkoQFmqpVleau8jsfok"}
+19:I[27993,["$4"],"OutletBoundary"]
+d:["$","section","7. Контакты",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"7. Контакты"}],[["$","p","{company}, {address}. Email: {email}.",{"className":"mt-2 leading-relaxed text-ink/85","children":"[____], [____]. Email: [____]."}]]]}]
+e:["$","$L19",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@1a"}]}]
+18:true
+9:300
+1a:null
+9:C
+17:0
+b:"$undefined"
+7:"$undefined"
+16:"$undefined"
+f:"$undefined"

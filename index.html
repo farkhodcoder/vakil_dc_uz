@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="uz-Latn">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>vakil</title>
+    <script>
+      // Saytning ildizi (/ yoki GitHub Pages'da /<repo>/): tanlangan yoki brauzer tiliga yo'naltirish.
+      (function () {
+        var langs = ["uz", "oz", "ru", "en", "tr"];
+        var saved = (document.cookie.match(/(?:^|; )vakil_lang=([a-z]{2})/) || [])[1];
+        var lang = langs.indexOf(saved) >= 0 ? saved : null;
+        if (!lang) {
+          var nav = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+          nav = nav.toLowerCase();
+          lang = nav.indexOf("uz-cyrl") === 0 ? "oz"
+            : nav.indexOf("uz") === 0 ? "uz"
+            : nav.indexOf("ru") === 0 ? "ru"
+            : nav.indexOf("tr") === 0 ? "tr"
+            : nav.indexOf("en") === 0 ? "en"
+            : "uz";
+        }
+        var base = location.pathname.replace(/index\.html$/, "").replace(/\/+$/, "");
+        location.replace(base + "/" + lang + "/" + location.search + location.hash);
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript><a href="uz/">vakil — O‘zbekcha</a></noscript>
+  </body>
+</html>

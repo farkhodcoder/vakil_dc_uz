@@ -1,0 +1,27 @@
+3:"$Sreact.fragment"
+4:"/vakil_dc_uz/_next/static/chunks/2b6_opqkwf_pf.js"
+5:I[86555,["$4"],"default"]
+6:I[18757,["$4"],"default"]
+c:I[27993,["$4"],"OutletBoundary"]
+d:"$Sreact.suspense"
+10:"ViewportBoundary"
+11:I[27993,["$4"],"$10"]
+12:"MetadataBoundary"
+13:I[27993,["$4"],"$12"]
+14:I[34896,["$4"],"IconMark"]
+8:X
+8:C
+9:X
+a:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$3","c",{"children":["$Lb",[["$","script","script-0",{"src":"/vakil_dc_uz/_next/static/chunks/14ur2j4gvqw8g.js","async":true}]],["$","$Lc",null,{"children":["$","$d",null,{"name":"Next.MetadataOutlet","children":"$@e"}]}]]}],"p":"$@f","v":null,"s":"$9"}}]]
+2:[["children",{"s":"sinov","h":64,"d":{"r":["$","$3","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@7","v":"$8","s":"$9"},"c":"$Qa"}]]
+1:[["children",{"s":{"n":"lang","t":"d","k":"ru","s":[]},"h":48,"c":"$Q2"}]]
+0:{"t":{"t":{"s":"","h":80,"c":"$Q1"},"h":{"r":["$","$3","h",{"children":[null,["$","$L11",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#1B3B6F"}]]}],["$","$L13",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$d",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"vakil — ваш цифровой представитель в документах и заявках"}],["$","meta","1",{"name":"description","content":"Подготовка заявки на Green Card (DV) без ошибок и сопровождение публикации статьи в журнале Scopus — в одном месте."}],["$","meta","2",{"name":"application-name","content":"vakil"}],["$","meta","3",{"name":"robots","content":"noindex"}],["$","link","4",{"rel":"icon","href":"/vakil_dc_uz/icon.svg?icon.3me2-4m8hkee2.svg","sizes":"any","type":"image/svg+xml"}],["$","$L14","5",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@15","v":null,"s":"$9"}},"a":"$@16","u":"$@17","b":"BqQkoQFmqpVleau8jsfok"}
+b:E{"digest":"NEXT_HTTP_ERROR_FALLBACK;404"}
+e:null
+17:true
+9:300
+9:C
+16:0
+7:"$undefined"
+15:"$undefined"
+f:"$undefined"

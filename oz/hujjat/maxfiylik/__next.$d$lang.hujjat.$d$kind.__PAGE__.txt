@@ -1,0 +1,31 @@
+3:"$Sreact.fragment"
+4:"/vakil_dc_uz/_next/static/chunks/2b6_opqkwf_pf.js"
+5:I[86555,["$4"],"default"]
+6:I[18757,["$4"],"default"]
+11:"ViewportBoundary"
+12:I[27993,["$4"],"$11"]
+13:"MetadataBoundary"
+14:I[27993,["$4"],"$13"]
+15:"$Sreact.suspense"
+16:I[34896,["$4"],"IconMark"]
+8:X
+8:C
+9:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$3","c",{"children":[["$","article",null,{"lang":"uz-Latn","className":"mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14","children":[["$","h1",null,{"className":"text-3xl font-extrabold tracking-tight text-brand sm:text-4xl","children":"Maxfiylik siyosati"}],["$","p",null,{"className":"mt-2 text-sm text-muted","children":["Tahrir sanasi",": ","2026-10-26"]}],["$","p",null,{"className":"mt-4 rounded-xl border border-warn/25 bg-warn-50 px-4 py-3 text-sm font-semibold text-warn","children":"Hujjat loyihasi: rekvizitlar va yakuniy matn ishga tushirishdan oldin tasdiqlanadi."}],["$","div",null,{"className":"mt-8 flex flex-col gap-7","children":[["$","section","1. Biz nimani saqlaymiz",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"1. Biz nimani saqlaymiz"}],[["$","p","Google orqali kirganingizda: email manzil va Google bergan profil ma’lumotlari (ism, profil rasmi havolasi) — Supabase Auth hisob yozuvida.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Google orqali kirganingizda: email manzil va Google bergan profil ma’lumotlari (ism, profil rasmi havolasi) — Supabase Auth hisob yozuvida."}],["$","p","To‘lovlar: summa, holat, sana va Click tranzaksiya raqamlari. Mashqlar: nechta mashq ochiq va yakunlangan.",{"className":"mt-2 leading-relaxed text-ink/85","children":"To‘lovlar: summa, holat, sana va Click tranzaksiya raqamlari. Mashqlar: nechta mashq ochiq va yakunlangan."}]]]}],["$","section","2. Biz nimani saqlamaymiz",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"2. Biz nimani saqlamaymiz"}],[["$","p","Pasport ma’lumotlari, pasport skani, fotolar va anketa javoblari serverga yuborilmaydi. Ular faqat brauzeringiz xotirasida (sessionStorage) turadi va oyna yopilganda o‘chadi. Foto tahlili va PDF namuna qurilmangizning o‘zida tayyorlanadi.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Pasport ma’lumotlari, pasport skani, fotolar va anketa javoblari serverga yuborilmaydi. Ular faqat brauzeringiz xotirasida (sessionStorage) turadi va oyna yopilganda o‘chadi. Foto tahlili va PDF namuna qurilmangizning o‘zida tayyorlanadi."}]]]}],["$","section","3. Maqsad",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"3. Maqsad"}],[["$","p","Hisobga kirish, to‘lovni qabul qilish va mashq huquqini hisobga olish.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Hisobga kirish, to‘lovni qabul qilish va mashq huquqini hisobga olish."}]]]}],["$","section","4. Uchinchi tomonlar",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"4. Uchinchi tomonlar"}],[["$","p","Google — kirish uchun; Click — to‘lov uchun; Supabase — ma’lumotlar bazasi va autentifikatsiya ({location}). Reklama yoki analitika xizmatlariga ma’lumot berilmaydi.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Google — kirish uchun; Click — to‘lov uchun; Supabase — ma’lumotlar bazasi va autentifikatsiya (Supabase (Frankfurt, EU)). Reklama yoki analitika xizmatlariga ma’lumot berilmaydi."}]]]}],["$","section","5. Cookie fayllar",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"5. Cookie fayllar"}],[["$","p","Faqat kirish sessiyasi va tanlangan til uchun zarur cookie fayllar ishlatiladi.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Faqat kirish sessiyasi va tanlangan til uchun zarur cookie fayllar ishlatiladi."}]]]}],"$Ld","$Le"]}]]}],null,"$Lf"]}],"p":"$@10","v":null,"s":"$9"}}]]
+a:[["children",{"s":{"n":"kind","t":"d","k":"maxfiylik","s":[]},"h":96,"d":{"r":["$","$3","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@b","v":"$8","s":"$9"},"c":"$Qc"}]]
+2:[["children",{"s":"hujjat","h":64,"d":{"r":["$","$3","c",{"children":[null,["$","$L5",null,{"parallelRouterKey":"children","template":["$","$L6",null,{}]}]]}],"p":"$@7","v":"$8","s":"$9"},"c":"$Qa"}]]
+1:[["children",{"s":{"n":"lang","t":"d","k":"oz","s":[]},"h":48,"c":"$Q2"}]]
+0:{"t":{"t":{"s":"","h":80,"c":"$Q1"},"h":{"r":["$","$3","h",{"children":[null,["$","$L12",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}],["$","meta","2",{"name":"theme-color","content":"#1B3B6F"}]]}],["$","$L14",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Maxfiylik siyosati | vakil"}],["$","meta","1",{"name":"description","content":"Green Card (DV) аризасини хатосиз тайёрлаш ва Scopus журналида мақола нашр қилишга ҳамроҳлик — бир жойда."}],["$","meta","2",{"name":"application-name","content":"vakil"}],["$","link","3",{"rel":"icon","href":"/vakil_dc_uz/icon.svg?icon.3me2-4m8hkee2.svg","sizes":"any","type":"image/svg+xml"}],["$","$L16","4",{}]]}]}],null]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"p":"$@17","v":null,"s":"$9"}},"a":"$@18","u":"$@19","b":"BqQkoQFmqpVleau8jsfok"}
+1a:I[27993,["$4"],"OutletBoundary"]
+d:["$","section","6. Huquqlaringiz",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"6. Huquqlaringiz"}],[["$","p","Ma’lumotlaringiz haqida so‘rash yoki hisobingizni o‘chirish uchun {email} manziliga yozing.",{"className":"mt-2 leading-relaxed text-ink/85","children":"Ma’lumotlaringiz haqida so‘rash yoki hisobingizni o‘chirish uchun [____] manziliga yozing."}]]]}]
+e:["$","section","7. Aloqa",{"children":[["$","h2",null,{"className":"text-lg font-extrabold text-ink","children":"7. Aloqa"}],[["$","p","{company}, {address}. Email: {email}.",{"className":"mt-2 leading-relaxed text-ink/85","children":"[____], [____]. Email: [____]."}]]]}]
+f:["$","$L1a",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@1b"}]}]
+19:true
+9:300
+1b:null
+9:C
+18:0
+b:"$undefined"
+7:"$undefined"
+17:"$undefined"
+10:"$undefined"
