@@ -110,24 +110,27 @@ export type Database = {
         Row: {
           completed_at: string | null
           created_at: string
+          grant_note: string | null
           id: string
-          payment_id: string
+          payment_id: string | null
           status: Database["public"]["Enums"]["practice_status"]
           user_id: string
         }
         Insert: {
           completed_at?: string | null
           created_at?: string
+          grant_note?: string | null
           id?: string
-          payment_id: string
+          payment_id?: string | null
           status?: Database["public"]["Enums"]["practice_status"]
           user_id: string
         }
         Update: {
           completed_at?: string | null
           created_at?: string
+          grant_note?: string | null
           id?: string
-          payment_id?: string
+          payment_id?: string | null
           status?: Database["public"]["Enums"]["practice_status"]
           user_id?: string
         }
